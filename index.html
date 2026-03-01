@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiSpace Studio - Estrategia Visual de Alta Conversión</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/pablo.png">
+</head>
+<body>
+
+    <div class="bg-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="circle circle-4"></div>
+        <div class="circle circle-5"></div>
+    </div>
+
+    <header>
+        <div class="header-pill">
+            <div class="header-content">
+                <div class="logo"><a href="/cdn-cgi/l/email-protection#2e48475d5e4f4d4b5d5a5b4a47416e49434f4742004d4143"><span class="logo-name">fispacestudio</span><span class="logo-domain">@gmail.com</span></a></div>
+                <nav>
+                    <a href="#redes">ver redes</a>
+                    <a href="#contacto" class="btn-contacto">CONTACTO</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hola" >Arquitectura visual para <img src="img/estrella-hero2.svg" class="estrella-hero2" alt=""><br><span class="highlight">escalar ventas digitales.</span></h1>
+                <p>Optimizo VSL, creativos para ads y sistemas de monetización post-venta para infoproductores y e-commerce que quieren crecer con estructura, no con improvisación bajo estrategia visual de motion design.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn-primary">Trabajemos juntos <img src="img/estrella_hero.svg" class="estrella-icon-hero" alt=""></a>
+                    <a href="#planes" class="btn-secondary"><samp class="hero-btn-secundario">ver planes de trabajo</samp></a>
+                </div>
+            </div>
+            <div class="hero-mascot">
+                <div class="mascot-container">
+                    <img src="img/mano-derecha.svg" class="hand-layer-left" alt="">
+                    <img src="img/mano-izquierda.svg" class="hand-layer-right" alt="">
+                    <img src="img/robot.svg" class="robot-layer" alt="Robot mascota">
+                    <div class="logo-circle-layer">
+                        <img src="img/logo.png" class="pablo-img" alt="FiSpace Studio Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visual-direction">
+        <h2 class="section-title reveal">DIRECCIÓN VISUAL</h2>
+        <img src="img/estrella-visual-direction.svg" class="estrella-visualdirection" alt="">
+        <div class="video-container reveal reveal-scale reveal-delay-2">
+            <div class="video-wrapper" id="videoWrapper">
+                <video id="myVideo" preload="metadata" playsinline>
+                    <source src="video/intro.mp4" type="video/mp4">
+                </video>
+
+                <!-- Capa invisible para capturar taps en móvil -->
+                <div id="tapCatcher"></div>
+
+                <!-- Overlay inicial (solo al cargar) -->
+                <div class="video-overlay" id="videoOverlay" onclick="playVideo()">
+                    <div class="play-ring"></div>
+                    <div class="play-btn-icon">
+                        <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
+                            <path d="M0 0L28 16L0 32V0Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <p class="video-subtitle">calidad y dirección antes que efectos</p>
+                </div>
+
+                <!-- Barra de controles personalizada -->
+                <div class="video-controls" id="videoControls">
+                    <!-- Botón Play/Pausa -->
+                    <button class="ctrl-btn" id="playPauseBtn" onclick="togglePlay()" title="Play / Pausa">
+                        <div class="ctrl-ring"></div>
+                        <span class="ctrl-icon" id="playPauseIcon">
+                            <!-- Icono play (se ve cuando está pausado) -->
+                            <svg id="iconPlay" width="20" height="22" viewBox="0 0 20 22" fill="none" style="display:none">
+                                <path d="M0 0L20 11L0 22V0Z" fill="white"/>
+                            </svg>
+                            <!-- Icono pausa (se ve cuando está reproduciendo) -->
+                            <svg id="iconPause" width="18" height="22" viewBox="0 0 18 22" fill="none">
+                                <rect x="0" y="0" width="5" height="22" rx="2" fill="white"/>
+                                <rect x="13" y="0" width="5" height="22" rx="2" fill="white"/>
+                            </svg>
+                            
+                        </span>
+                    </button>
+
+                    <!-- Barra de progreso -->
+                    <div class="ctrl-progress-wrap">
+                        <div class="ctrl-progress-bar" id="progressBar" onclick="seekVideo(event)">
+                            <div class="ctrl-progress-fill" id="progressFill"></div>
+                            <div class="ctrl-progress-thumb" id="progressThumb"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tiempo -->
+                    <div class="ctrl-time">
+                        <span id="currentTime">0:00</span>
+                        <span class="ctrl-time-sep">/</span>
+                        <span id="totalTime">0:00</span>
+                    </div>
+
+                    <!-- Botón Fullscreen -->
+                    <button class="ctrl-btn ctrl-btn-fs" id="fullscreenBtn" onclick="toggleFullscreen()" title="Pantalla completa">
+                        <span class="ctrl-icon">
+                            <svg id="iconExpand" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M2 7.5V2.5H7.5M12.5 2.5H17.5V7.5M17.5 12.5V17.5H12.5M7.5 17.5H2.5V12.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg id="iconCompress" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:none">
+                                <path d="M7 1V7H1M13 7H19M13 19V13H19M1 13H7V19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="planes">
+        <h2 class="pricing-title reveal">Formas de trabajar</h2>
+        <p class="pricing-subtitle reveal reveal-delay-1">construyo piezas visuales que elevan la percepción de valor de tu marca.</p>
+        <div class="pricing-cards">
+            <div class="pricing-card reveal reveal-delay-1">
+                <h3 class="card-title">Optimización Estratégica de VSL</h3>
+                <p class="card-price">Desde $300/mes</p>
+                <p class="card-description">Me integro a tu VSL o webinar para intervenir donde realmente se pierden ventas</p>
+                <ul class="card-features">
+                    <li>Mayor claridad ante tu audiencia</li>
+                    <li>Aumento del tiempo de retención</li>
+                    <li>Visuales profesionales</li>
+                    <li>Crecimiento sostenido</li>
+                </ul>
+                <a target="_blank" href="https://wa.me/573226575563?text=Hola%20fisdamn%21%20Estoy%20interesado%20en%20el%20plan%20de%20optimizaci%C3%B3n%20de%20VSL.%0ATe%20comentar%C3%A9%20mi%20caso." class="card-button">Potenciar VSls <img src="img/estrella-pricing.svg" class="estrella-pricing" alt=""> <img src="img/estrella-pricing2.svg" class="estrella-pricing2" alt=""> <img src="img/estrella-pricing3.svg" class="estrella-pricing3" alt=""></a>
+            </div>
+            <div class="pricing-card card-highlight reveal reveal-delay-2">
+                <h3 class="card-title">Tecnología y SaaS</h3>
+                <p class="card-price">Desde $400/mes</p>
+                <p class="card-description">Para tecnología, software y productos digitales.</p>
+                <ul class="card-features">
+                    <li>Mayor conversión en anuncios</li>
+                    <li>Presentación visual coherente y profesional</li>
+                    <li>Mejor demostración de producto</li>
+                    <li>Percepción premium inmediata</li>
+                </ul>
+                <a href="#contacto" class="card-button">Ver si encaja <img src="img/estrella-pricing.svg" class="estrella-pricing" alt=""> <img src="img/estrella-pricing2.svg" class="estrella-pricing2" alt=""> <img src="img/estrella-pricing3.svg" class="estrella-pricing3" alt=""></a>
+            </div>
+            <div class="pricing-card reveal reveal-delay-3">
+                <h3 class="card-title">Empresas de E-commerce</h3>
+                <p class="card-price">Desde $370/mes</p>
+                <p class="card-description">Para tiendas online que necesitan convertir clientes.</p>
+                <ul class="card-features">
+                    <li>Aumento en el CTR</li>
+                    <li>Mayor percepción de calidad del producto</li>
+                    <li>Contenido que empuja ventas</li>
+                    <li>Claridad visual</li>
+                </ul>
+                <a href="#contacto" class="card-button">ver si encaja <img src="img/estrella-pricing.svg" class="estrella-pricing" alt=""> <img src="img/estrella-pricing2.svg" class="estrella-pricing2" alt=""> <img src="img/estrella-pricing3.svg" class="estrella-pricing3" alt=""></a>
+            </div>
+            <div class="pricing-card reveal reveal-delay-4">
+                <h3 class="card-title">Empresas de E-commerce</h3>
+                <p class="card-price">Desde $370/mes</p>
+                <p class="card-description">Para tiendas online que necesitan convertir clientes.</p>
+                <ul class="card-features">
+                    <li>Aumento en el CTR</li>
+                    <li>Mayor percepción de calidad del producto</li>
+                    <li>Contenido que empuja ventas</li>
+                    <li>Claridad visual</li>
+                </ul>
+                <a href="#contacto" class="card-button">ver si encaja <img src="img/estrella-pricing.svg" class="estrella-pricing" alt=""> <img src="img/estrella-pricing2.svg" class="estrella-pricing2" alt=""> <img src="img/estrella-pricing3.svg" class="estrella-pricing3" alt=""></a>
+            </div>
+        </div>
+        <!-- Indicador de scroll solo en móvil -->
+        <div class="scroll-hint">
+            <span class="scroll-dot active"></span>
+            <span class="scroll-dot"></span>
+            <span class="scroll-dot"></span>
+            <span class="scroll-dot"></span>
+        </div>
+    </section>
+
+    <section class="project-cta">
+        <div class="cta-wrapper reveal reveal-scale">
+            <div class="cta-content">
+                <h2 class="cta-title">Buscas algo más <br> <span class="highlight">puntual?</span></h2>
+                <p class="cta-subtitle">También trabajo por proyecto cuando el<br>contexto lo justifica. VSLs, piezas clave o videos <br>específicos que requieren un enfoque <br>estratégico y cuidado visual.</p>
+            </div>
+            
+            <div class="cta-box-wrapper">
+                <div class="project-mascot">
+                    <div class="mascot2-container">
+                        <img src="img/mano-izquierda2.svg" class="hand-layer-left2" alt="Manos robot">
+                        <img src="img/robot2.svg" class="robot2" alt="Robot mascota">
+                    </div>
+                </div>
+                <div class="cta-box-label">describir proyecto <img src="img/estrella-projet.svg" class="estrella-icon" alt=""></div>
+                <div class="cta-box">
+                    <p class="cta-box-text">Si tienes claro el objetivo y el video es <br>parte central de tu negocio, escríbeme <br>y lo evaluamos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-content reveal reveal-scale">
+            <h2 class="contact-title reveal reveal-delay-1">Trabajo con un numero <br> <span class="highlight">limitado de marcas</span></h2>
+            <p class="contact-description reveal reveal-delay-2">Solo colaboro activamente con 3 clientes al mismo tiempo. <br>lo hago por enfoque. <br>Si trabajamos juntos, me integro a tu sistema: analizo métricas, reviso rendimiento y <br>optimizo de forma constante.
+            </p>
+            <p class="contact-subtitle reveal reveal-delay-2">
+                Si buscas dirección visual real orientada a métricas <br> Este es el siguiente paso. <br> Cuéntame qué estás construyendo, qué estás vendiendo y dónde estás perdiendo rendimiento. <br>Si veo que puedo aportar impacto real, trabajamos. <br>Si no, te lo diré con honestidad.
+            </p>
+            <div class="contact-buttons reveal reveal-delay-3">
+                <a href="https://wa.me/TUNUMERO" class="btn-whatsapp"><img src="img/whatsapp-icon.svg" class="whatsapp-icon" alt=""> Chat en WhatsApp</a>
+                <a href="/cdn-cgi/l/email-protection#afc9c6dcdfcecccadcdbdacbc6c0efc8c2cec6c381ccc0c2" class="btn-email"><img src="img/gmail.svg" class="email-icon" alt=""> Enviar Email</a>
+            </div>
+            <p class="social-text">¿quieres saber más de mí?</p>
+            <div class="linea"></div>
+            <div class="social-links" id="redes">
+                <a href="#" class="social-link">INSTAGRAM</a>
+                <a href="#" class="social-link">TWITTER</a>
+                <a href="#" class="social-link">TIKTOK</a>
+            </div>
+        </div>
+    </section>
+
+        <footer>
+        <p>© 2026 FiSpace Studio - Estrategia Visual de Alta Conversión</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
