@@ -1135,7 +1135,6 @@ text-fill-color: transparent;
   transition: transform 0.3s, box-shadow 0.3s;
   white-space: nowrap;
   letter-spacing: -0.04em;
-  margin-right: 100px;
 }
 
 .btn-whatsapp:hover {
@@ -1231,6 +1230,7 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+
   .hero-content {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -1259,15 +1259,51 @@ footer p {
   .cta-wrapper {
     padding: 45px 35px 50px;
   }
+  
 
   .cta-content {
     text-align: left;
   }
 
   .cta-box-wrapper {
-    right: 35px;
-    width: 200px;
+    right: -40px;
+    width: 240px;
+    bottom: -60px;
   }
+    .cta-box-text {
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 1.1;
+  margin-top: -20px;
+}
+  .cta-subtitle {
+  font-size: 13px;
+  color: rgba(163, 210, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 480px;
+}
+  .robot2 {
+  position: absolute;
+  width: 300px;
+  margin-top: 300px;
+  margin-left: 270px;
+}
+.cta-box-label {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0px 22px;
+  margin-bottom: -55px;
+  width: 210px;
+  height: 75px;
+}
+.hand-layer-left2 {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  margin-top: 450px;
+  margin-left: 230px;
+}
 }
 
 @media (max-width: 768px) {
@@ -1424,6 +1460,10 @@ footer p {
     border-radius: 40px;
   }
 
+  .contact-content::before {
+    border-radius: 40px;
+  }
+
   .contact-buttons {
     flex-wrap: nowrap;
     gap: 10px;
@@ -1450,17 +1490,21 @@ footer p {
 
   /* CTA en móvil */
   .project-cta {
-    padding-bottom: 160px;
+    padding: 40px 16px 160px;
   }
 
   .cta-wrapper {
     padding: 35px 24px 35px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    max-width: 600px;
   }
-
   .cta-box-wrapper {
-    right: -70px;
+    right: -20px;
     width: 200px;
-    bottom: -120px;
+    bottom: -10px;
+    padding: 0;
   }
 
   .cta-box-label {
@@ -1483,7 +1527,7 @@ footer p {
 
 }
 .cta-box-text {
-    font-size: 10px;
+    font-size: 13px;
   }
 .mascot2-container {
   position: relative;
@@ -1500,15 +1544,15 @@ footer p {
 
 .robot2 {
   position: absolute;
-  width: 200px;
-  width: 200px;
-  margin-top: 360px;
-  margin-left: 290px;
+  width: 250px;
+  width: 250px;
+  margin-top: 330px;
+  margin-left: 280px;
 }
   .hand-layer-left2 {
-    width: 35px;
-    height: 35px;
-    margin-top: 455px;
+    width: 40px;
+    height: 40px;
+    margin-top: 450px;
     margin-left: 255px;
   }
 
@@ -1584,10 +1628,6 @@ footer p {
     padding: 28px 22px;
   }
 
-  .cta-wrapper {
-    padding: 28px 18px 35px;
-  }
-
   .cta-title {
     font-size: 26px;
   }
@@ -1597,9 +1637,87 @@ footer p {
     width: 210px;
     bottom: -110px;
   }
+  /*pricing-robot*/
+    .project-cta {
+    padding: 40px 16px 160px;
+  }
+
+  .cta-wrapper {
+    padding: 35px 24px 35px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    max-width: 600px;
+  }
+  .cta-box-wrapper {
+    right: -75px;
+    width: 200px;
+    bottom: -50px;
+    padding: 0;
+  }
+
+  .cta-box-label {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0px 22px;
+  margin-bottom: -55px;
+  width: 180px;
+  height: 75px;
+}
+
+.cta-box {
+  border: none;
+  border-radius: 25px;
+  padding: 25px 18px 22px;
+  width: 100%;
+  box-shadow: inset 0px 0px 45px rgba(0, 238, 255, 0.4);
+  position: relative;
+  z-index: 2;
+
+}
+.cta-box-text {
+    font-size: 13px;
+  }
+.mascot2-container {
+  position: relative;
+  width: 420px;
+  height: 480px;
+}
+
+.project-mascot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -200px;
+}
+
+.robot2 {
+  position: absolute;
+  width: 200px;
+  width: 200px;
+  margin-top: 360px;
+  margin-left: 280px;
+}
+  .hand-layer-left2 {
+    width: 40px;
+    height: 40px;
+    margin-top: 450px;
+    margin-left: 245px;
+  }
+.cta-subtitle {
+  font-size: 13px;
+  color: rgba(163, 210, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.1;
+  max-width: 230px;
+}
 
   .contact-content {
     padding: 30px 20px;
+    border-radius: 40px;
+  }
+
+  .contact-content::before {
     border-radius: 40px;
   }
 
@@ -1619,6 +1737,9 @@ footer p {
   .card-price {
     font-size: 18px;
   }
+  .contact-title {
+  font-size: clamp(32px, 7vw, 60px);
+}
 }
 
 #tapCatcher {
@@ -1846,7 +1967,7 @@ footer p {
 .linea {
   position: relative;
   width: 90%;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(90deg, #FF00FF, #00EEFF, #A3FC4F, #3D4CF5);
   margin: 12px auto 20px;
   border-radius: 300px;
