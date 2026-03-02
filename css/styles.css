@@ -1457,11 +1457,11 @@ footer p {
 
   .contact-content {
     padding: 30px 20px;
-    border-radius: 40px;
+    border-radius: 70px;
   }
 
   .contact-content::before {
-    border-radius: 40px;
+    border-radius: 70px;
   }
 
   .contact-buttons {
@@ -1721,11 +1721,11 @@ footer p {
 
   .contact-content {
     padding: 30px 20px;
-    border-radius: 40px;
+    border-radius: 70px;
   }
 
   .contact-content::before {
-    border-radius: 40px;
+    border-radius: 70px;
   }
 
   .contact-subtitle {
