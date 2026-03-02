@@ -112,9 +112,12 @@ const tapCatcher = document.getElementById('tapCatcher');
 let isTouchDevice = false;
 window.addEventListener('touchstart', () => { isTouchDevice = true; }, { once: true, passive: true });
 
-tapCatcher.addEventListener('click', () => {
-    if (!isTouchDevice) return;
+// Click en cualquier parte del video → mostrar/ocultar controles
+wrapper.addEventListener('click', (e) => {
+    if (controls.contains(e.target)) return; // ignorar clicks en los controles
+    if (overlay.contains(e.target)) return;  // ignorar click en overlay (play inicial)
     if (state === 'idle' || state === 'ended') return;
+
     if (controls.classList.contains('visible')) {
         controls.classList.remove('visible');
         clearTimeout(hideTimer);
@@ -129,14 +132,8 @@ tapCatcher.addEventListener('click', () => {
     }
 });
 
-wrapper.addEventListener('click', (e) => {
-    if (isTouchDevice) return;
-    if (controls.contains(e.target)) return;
-    if (overlay.contains(e.target)) return;
-    if (state === 'playing' || state === 'paused') togglePlay();
-});
-
 wrapper.addEventListener('mousemove', () => {
+    if (isTouchDevice) return; // en móvil el mousemove interfiere con el tap
     if (state === 'idle' || state === 'ended') return;
     controls.classList.add('visible');
     clearTimeout(hideTimer);
