@@ -1576,6 +1576,13 @@ footer p {
 }
 
 @media (max-width: 480px) {
+  .estrella-hero2{
+  --estrella-size: 25px; 
+  width: var(--estrella-size);
+  height: var(--estrella-size);
+  margin-bottom: 20px;
+  margin-left: -5px;
+}
   .hero-text h1 {
     font-size: 26px;
     line-height: 1.15;
