@@ -2033,4 +2033,71 @@ footer p {
     padding: 6px 10px;
     margin-right: 4px;
   }
+  /*pricing-robot*/
+    .project-cta {
+    padding: 40px 16px 160px;
+  }
+
+  .cta-wrapper {
+    padding: 35px 24px 35px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    max-width: 600px;
+  }
+  .cta-box-wrapper {
+    right: -75px;
+    width: 200px;
+    bottom: -90px;
+    padding: 0;
+  }
+
+  .cta-box-label {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0px 22px;
+  margin-bottom: -55px;
+  width: 180px;
+  height: 75px;
+}
+
+.cta-box {
+  border: none;
+  border-radius: 25px;
+  padding: 25px 18px 22px;
+  width: 100%;
+  box-shadow: inset 0px 0px 45px rgba(0, 238, 255, 0.4);
+  position: relative;
+  z-index: 2;
+
+}
+.cta-box-text {
+    font-size: 13px;
+  }
+.mascot2-container {
+  position: relative;
+  width: 420px;
+  height: 480px;
+}
+
+.project-mascot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -200px;
+}
+
+.robot2 {
+  position: absolute;
+  width: 175px;
+  width: 175px;
+  margin-top: 360px;
+  margin-left: 275px;
+}
+  .hand-layer-left2 {
+    width: 40px;
+    height: 40px;
+    margin-top: 450px;
+    margin-left: 245px;
+  }
 }
