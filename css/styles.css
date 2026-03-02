@@ -1969,6 +1969,15 @@ footer p {
   position: relative;
   z-index: 10; /* encima del video-container */
 }
+.estrella-hero2{
+  --estrella-size: 16px; 
+  width: var(--estrella-size);
+  height: var(--estrella-size);
+  margin-top: -18px;
+  margin-left: -3px;
 }
-
-
+.hola {
+    margin-right: 0;
+  
+  }
+}
