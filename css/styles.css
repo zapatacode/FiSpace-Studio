@@ -1461,7 +1461,7 @@ footer p {
   }
 
   .contact-content::before {
-    border-radius: 70px;
+    border-radius: 40px;
   }
 
   .contact-buttons {
@@ -1544,15 +1544,15 @@ footer p {
 
 .robot2 {
   position: absolute;
-  width: 250px;
-  width: 250px;
-  margin-top: 330px;
-  margin-left: 280px;
+  width: 200px;
+  width: 200px;
+  margin-top: 360px;
+  margin-left: 290px;
 }
   .hand-layer-left2 {
-    width: 40px;
-    height: 40px;
-    margin-top: 450px;
+    width: 35px;
+    height: 35px;
+    margin-top: 455px;
     margin-left: 255px;
   }
 
@@ -1576,13 +1576,6 @@ footer p {
 }
 
 @media (max-width: 480px) {
-  .estrella-hero2{
-  --estrella-size: 25px; 
-  width: var(--estrella-size);
-  height: var(--estrella-size);
-  margin-bottom: 20px;
-  margin-left: -5px;
-}
   .hero-text h1 {
     font-size: 26px;
     line-height: 1.15;
@@ -1635,6 +1628,12 @@ footer p {
     padding: 28px 22px;
   }
 
+  .cta-wrapper {
+    padding: 28px 18px 35px;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .cta-title {
     font-size: 26px;
   }
@@ -1644,80 +1643,6 @@ footer p {
     width: 210px;
     bottom: -110px;
   }
-  /*pricing-robot*/
-    .project-cta {
-    padding: 40px 16px 160px;
-  }
-
-  .cta-wrapper {
-    padding: 35px 24px 35px;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    max-width: 600px;
-  }
-  .cta-box-wrapper {
-    right: -75px;
-    width: 200px;
-    bottom: -50px;
-    padding: 0;
-  }
-
-  .cta-box-label {
-  font-size: 14px;
-  line-height: 16px;
-  padding: 0px 22px;
-  margin-bottom: -55px;
-  width: 180px;
-  height: 75px;
-}
-
-.cta-box {
-  border: none;
-  border-radius: 25px;
-  padding: 25px 18px 22px;
-  width: 100%;
-  box-shadow: inset 0px 0px 45px rgba(0, 238, 255, 0.4);
-  position: relative;
-  z-index: 2;
-
-}
-.cta-box-text {
-    font-size: 13px;
-  }
-.mascot2-container {
-  position: relative;
-  width: 420px;
-  height: 480px;
-}
-
-.project-mascot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: -200px;
-}
-
-.robot2 {
-  position: absolute;
-  width: 200px;
-  width: 200px;
-  margin-top: 360px;
-  margin-left: 280px;
-}
-  .hand-layer-left2 {
-    width: 40px;
-    height: 40px;
-    margin-top: 450px;
-    margin-left: 245px;
-  }
-.cta-subtitle {
-  font-size: 13px;
-  color: rgba(163, 210, 255, 0.75);
-  margin-bottom: 40px;
-  line-height: 1.1;
-  max-width: 230px;
-}
 
   .contact-content {
     padding: 30px 20px;
@@ -1725,7 +1650,7 @@ footer p {
   }
 
   .contact-content::before {
-    border-radius: 70px;
+    border-radius: 40px;
   }
 
   .contact-subtitle {
@@ -1752,8 +1677,9 @@ footer p {
 #tapCatcher {
     position: absolute;
     inset: 0;
-    z-index: 5; /* encima del video, debajo del overlay y controles */
+    z-index: 15;
     background: transparent;
+    pointer-events: none; /* se activa por JS solo cuando el video está en curso */
 }
 
 /* ---- Controles del player ---- */
@@ -1974,7 +1900,7 @@ footer p {
 .linea {
   position: relative;
   width: 90%;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(90deg, #FF00FF, #00EEFF, #A3FC4F, #3D4CF5);
   margin: 12px auto 20px;
   border-radius: 300px;
@@ -2033,71 +1959,16 @@ footer p {
     padding: 6px 10px;
     margin-right: 4px;
   }
-  /*pricing-robot*/
-    .project-cta {
-    padding: 40px 16px 160px;
-  }
-
-  .cta-wrapper {
-    padding: 35px 24px 35px;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    max-width: 600px;
-  }
-  .cta-box-wrapper {
-    right: -25px;
-    width: 200px;
-    bottom: -260px;
-    padding: 0;
-  }
-
-  .cta-box-label {
-  font-size: 14px;
-  line-height: 16px;
-  padding: 0px 22px;
-  margin-bottom: -55px;
-  width: 180px;
-  height: 75px;
-}
-
-.cta-box {
-  border: none;
-  border-radius: 25px;
-  padding: 25px 18px 22px;
-  width: 100%;
-  box-shadow: inset 0px 0px 45px rgba(0, 238, 255, 0.4);
+  .estrella-visualdirection {
+  --estrella-size: 28px; /* cambia este valor para ajustar el tamaño */
+  width: var(--estrella-size);
+  height: var(--estrella-size);
+  display: block;
+  margin: 0 auto;
+  margin-bottom: calc(-1 * var(--estrella-size) / 2); /* se centra sobre el borde del video */
   position: relative;
-  z-index: 2;
-
+  z-index: 10; /* encima del video-container */
 }
-.cta-box-text {
-    font-size: 13px;
-  }
-.mascot2-container {
-  position: relative;
-  width: 420px;
-  height: 480px;
 }
 
-.project-mascot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: -200px;
-}
 
-.robot2 {
-  position: absolute;
-  width: 175px;
-  width: 175px;
-  margin-top: 360px;
-  margin-left: 275px;
-}
-  .hand-layer-left2 {
-    width: 40px;
-    height: 40px;
-    margin-top: 450px;
-    margin-left: 245px;
-  }
-}
