@@ -766,8 +766,8 @@ text-fill-color: transparent;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 34px;
+  line-height: 35px;
   text-align: center;
   letter-spacing: -0.06em;
   margin-bottom: 3px;
@@ -779,38 +779,26 @@ text-fill-color: transparent;
   background-clip: text;
 }
 
-.card-price {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-  letter-spacing: -0.06em;
-  background: linear-gradient(90deg, #4CB050 0%, #00EEFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0 60px;
-  text-align: center; 
-}
 
 .card-description {
   font-family: 'Inter';
   font-size: 15px;
   font-style: normal;
   font-weight: 200;
-  line-height: 27px;
+  line-height: 17px;
   letter-spacing: -0.06em;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 25px;
   opacity: 0.9;
+  text-align: center;
   background: linear-gradient(270deg, #00EEFF 0%, #FFFFFF 84.62%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
+.pricing-referent{
+  margin-top: -15px;
+}
 
 .card-features {
   list-style: none;
@@ -1730,10 +1718,12 @@ footer p {
 
   .contact-subtitle {
     font-size: 15px;
+    line-height: 1.1;
   }
 
   .contact-description {
     font-size: 13px;
+    line-height: 1.1;
   }
 
   .card-title {
@@ -1741,9 +1731,6 @@ footer p {
     line-height: 1.2;
   }
 
-  .card-price {
-    font-size: 18px;
-  }
   .contact-title {
   font-size: clamp(32px, 7vw, 60px);
 }
@@ -2117,4 +2104,10 @@ footer p {
   margin-top: -18px;
   margin-left: -4px;
 }
+.contact-description {
+  line-height: 16px;
+}
+.contact-subtitle {
+    line-height: 16px;
+  }
 }
