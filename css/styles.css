@@ -536,6 +536,7 @@ text-fill-color: transparent;
   pointer-events: none;
   margin-top: 430px;
   margin-left: 165px;
+  transition: transform 0.3s ease;
 }
 
 /* Visual Direction Section */
@@ -933,6 +934,12 @@ text-fill-color: transparent;
 }
 
 /* Cajón "describir proyecto" en esquina inferior derecha */
+a.cta-box-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
 .cta-box-wrapper {
   position: absolute;
   bottom: -100px;
@@ -943,6 +950,16 @@ text-fill-color: transparent;
   flex-direction: column;
   align-items: center;
   margin-right: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-box-wrapper:hover {
+  transform: translateY(-6px);
+}
+
+.cta-box-wrapper:hover .cta-box {
+  box-shadow: inset 0px 0px 45px rgba(0, 238, 255, 0.6), 0 15px 40px rgba(0, 238, 255, 0.25);
 }
 
 
