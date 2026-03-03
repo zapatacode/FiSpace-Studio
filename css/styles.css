@@ -2033,19 +2033,20 @@ footer p {
     max-width: 600px;
   }
   .cta-box-wrapper {
-    right: -60px;
+    right: -80px;
     width: 200px;
-    bottom: -50px;
+    bottom: -40px;
     padding: 0;
   }
 
   .cta-box-label {
-  font-size: 14px;
+  font-size: 9px;
   line-height: 16px;
   padding: 0px 22px;
-  margin-bottom: -55px;
-  width: 180px;
-  height: 75px;
+  margin-bottom: -50px;
+  width: 130px;
+  height: 65px;
+  font-weight: 900;
 }
 
 .cta-box {
@@ -2056,10 +2057,11 @@ footer p {
   box-shadow: inset 0px 0px 45px rgba(0, 238, 255, 0.4);
   position: relative;
   z-index: 2;
-
+  width: 140px;
+  height: 80px;
 }
 .cta-box-text {
-    font-size: 13px;
+    font-size: 11px;
   }
 .mascot2-container {
   position: relative;
@@ -2076,16 +2078,16 @@ footer p {
 
 .robot2 {
   position: absolute;
-  width: 175px;
-  width: 175px;
-  margin-top: 360px;
-  margin-left: 275px;
+  width: 160px;
+  width: 160px;
+  margin-top: 380px;
+  margin-left: 285px;
 }
   .hand-layer-left2 {
-    width: 40px;
-    height: 40px;
-    margin-top: 450px;
-    margin-left: 245px;
+    width: 25px;
+    height: 25px;
+    margin-top: 465px;
+    margin-left: 265px;
   }
   .estrella-visualdirection {
   --estrella-size: 28px; /* cambia este valor para ajustar el tamaño */
@@ -2115,6 +2117,22 @@ footer p {
   color: rgba(163, 210, 255, 0.75);
   margin-bottom: 40px;
   line-height: 1.1;
-  max-width: 160px;
+  max-width: 150px;
+}
+.cta-title {
+    font-size: 20px;
+    margin-top: -20px;
+    margin-bottom: 5px;
+  }
+  .estrella-icon {
+  --estrella-size: 25px; /* cambia este valor para ajustar el tamaño */
+  width: var(--estrella-size);
+  height: var(--estrella-size);
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -10px;
+  position: relative;
+  top: -1px;
+  margin-top: -5px;
 }
 }
