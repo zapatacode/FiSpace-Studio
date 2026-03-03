@@ -662,8 +662,8 @@ text-fill-color: transparent;
 
 .pricing-title {
   text-align: center;
-  font-size: clamp(36px, 6vw, 58px);
-  font-weight: 800;
+  font-size: clamp(36px, 6vw, 50px);
+  font-weight: 700;
   font-family: 'Inter';
   font-style: normal;
   background: linear-gradient(180deg, #00EEFF, #FFFFFF 80%);
@@ -678,11 +678,11 @@ text-fill-color: transparent;
 .pricing-subtitle {
   text-align: center;
   margin: auto;
-  margin-bottom: 60px;
-  font-size: clamp(16px, 2.5vw, 26px);
+  margin-bottom: 0px;
+  font-size: clamp(16px, 2.5vw, 20px);
   max-width: 700px;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   font-family: 'Inter';
   background: linear-gradient(90deg, #FFFFFF 41.83%, #00EEFF 88.94%);
   -webkit-text-fill-color: transparent;
@@ -2152,5 +2152,28 @@ footer p {
   position: relative;
   top: -1px;
   margin-top: -5px;
+}
+.contact-title {
+  font-size: clamp(23px, 4vw, 60px);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.social-links {
+  gap: 10px;
+  justify-content: center;
+  margin-top: -45px;
+  margin-left: -6px;
+}
+.social-link {
+  color: #EBEBEB;
+  padding: 12px 15px;
+  border: 2px solid rgba(23, 225, 225, 0.3);
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  margin-top: 35px;
 }
 }
