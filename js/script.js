@@ -18,14 +18,41 @@ window.addEventListener('scroll', () => {
   lastScrollY = currentScrollY;
 }, { passive: true });
 
+// ---- Flechas de navegación de pricing (desktop) ----
+const pricingCardsEl  = document.querySelector('.pricing-cards');
+const arrowLeft       = document.getElementById('pricingLeft');
+const arrowRight      = document.getElementById('pricingRight');
+
+if (pricingCardsEl && arrowLeft && arrowRight) {
+  // Estado: false = mostrando cartas 1-3, true = mostrando carta 4
+  let showingLast = false;
+
+  function scrollToLast() {
+    pricingCardsEl.scrollTo({ left: pricingCardsEl.scrollWidth, behavior: 'smooth' });
+    showingLast = true;
+    arrowRight.classList.add('hidden');
+    arrowLeft.classList.remove('hidden');
+  }
+
+  function scrollToFirst() {
+    pricingCardsEl.scrollTo({ left: 0, behavior: 'smooth' });
+    showingLast = false;
+    arrowLeft.classList.add('hidden');
+    arrowRight.classList.remove('hidden');
+  }
+
+  arrowRight.addEventListener('click', scrollToLast);
+  arrowLeft.addEventListener('click', scrollToFirst);
+}
+
 // ---- Dots indicadores de pricing scroll ----
-const pricingCards = document.querySelector('.pricing-cards');
+const pricingCardsScroll = document.querySelector('.pricing-cards');
 const dots = document.querySelectorAll('.scroll-dot');
 
-if (pricingCards && dots.length) {
-    pricingCards.addEventListener('scroll', () => {
-        const totalScrollWidth = pricingCards.scrollWidth - pricingCards.clientWidth;
-        const progress = pricingCards.scrollLeft / totalScrollWidth;
+if (pricingCardsScroll && dots.length) {
+    pricingCardsScroll.addEventListener('scroll', () => {
+        const totalScrollWidth = pricingCardsScroll.scrollWidth - pricingCardsScroll.clientWidth;
+        const progress = pricingCardsScroll.scrollLeft / totalScrollWidth;
         const index = Math.round(progress * (dots.length - 1));
         dots.forEach((d, i) => d.classList.toggle('active', i === index));
     }, { passive: true });
