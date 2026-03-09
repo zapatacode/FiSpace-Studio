@@ -538,7 +538,59 @@ text-fill-color: transparent;
   margin-left: 165px;
   transition: transform 0.3s ease;
 }
+/* wrapper para robot3 + mano + botón whatsapp */
+.btn-whatsapp-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
 
+/*robot3*/
+.robot3 {
+  position: absolute;
+  width: 92px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 50px rgba(221, 68, 221, 0.4));
+  margin-top: -50px;
+  margin-left: -3px;
+  pointer-events: none;
+}
+.hand-layer-left3 {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  object-fit: contain;
+  pointer-events: none;
+  margin-top: 0px;
+  margin-left: -5px;
+  transition: transform 0.3s ease;
+}
+
+.btn-whatsapp {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(90deg, #FF00FF, #3D4CF5);
+  color: #FFFFFF;
+  padding: 8px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+}
 /* Visual Direction Section */
 .visual-direction {
   padding: 80px 20px;
@@ -1226,24 +1278,7 @@ a.cta-box-wrapper {
   gap: 15px;
   justify-content: center;
   margin-bottom: 10px;
-}
-
-.btn-whatsapp {
-  background: linear-gradient(90deg, #FF00FF, #3D4CF5);
-  color: #FFFFFF;
-  padding: 0px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  white-space: nowrap;
-  letter-spacing: -0.04em;
+  margin-top: 40px;
 }
 
 .btn-whatsapp:hover {
