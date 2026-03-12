@@ -1,3 +1,196 @@
+/* =====================================================
+   LOADER DE CARGA — FiSpace Studio
+   ===================================================== */
+
+#page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000434;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#page-loader.loader-exit {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.loader-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  animation: loader-float 8s ease-in-out infinite;
+}
+
+.loader-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(61, 76, 245, 0.55) 0%, transparent 70%);
+  top: -120px;
+  left: -120px;
+  animation-delay: 0s;
+}
+
+.loader-orb-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(221, 68, 221, 0.45) 0%, transparent 70%);
+  bottom: -100px;
+  right: -80px;
+  animation-delay: 2.5s;
+}
+
+.loader-orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(23, 225, 225, 0.35) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 5s;
+}
+
+@keyframes loader-float {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(25px, -25px); }
+  66%       { transform: translate(-20px, 30px); }
+}
+
+.loader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  animation: loader-fade-in 0.6s ease forwards;
+}
+
+@keyframes loader-fade-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.loader-brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 58px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.loader-brand-name {
+  background: linear-gradient(90deg, #ffffff, #17E1E1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loader-brand-accent {
+  background: linear-gradient(90deg, #3D4CF5, #DD44DD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loader-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(23, 225, 225, 0.65);
+  margin-top: -4px;
+}
+
+.loader-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: clamp(220px, 40vw, 360px);
+}
+
+.loader-bar-track {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #3D4CF5, #DD44DD, #00EEFF);
+  background-size: 200% 100%;
+  animation: loader-shimmer 2s linear infinite;
+  transition: width 0.35s ease;
+  box-shadow: 0 0 10px rgba(0, 238, 255, 0.6);
+}
+
+@keyframes loader-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.loader-pct {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(235, 235, 235, 0.5);
+  letter-spacing: 0.02em;
+  min-width: 32px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.loader-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.loader-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(23, 225, 225, 0.4);
+  animation: loader-dot-pulse 1.4s ease-in-out infinite;
+}
+
+.loader-dots span:nth-child(1) { animation-delay: 0s; }
+.loader-dots span:nth-child(2) { animation-delay: 0.22s; }
+.loader-dots span:nth-child(3) { animation-delay: 0.44s; }
+
+@keyframes loader-dot-pulse {
+  0%, 80%, 100% {
+    transform: scale(1);
+    background: rgba(23, 225, 225, 0.35);
+  }
+  40% {
+    transform: scale(1.6);
+    background: rgba(23, 225, 225, 1);
+    box-shadow: 0 0 8px rgba(23, 225, 225, 0.8);
+  }
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+/* =====================================================
+   FIN LOADER
+   ===================================================== */
+
 .estrella-hero2{
   --estrella-size: 45px; 
   width: var(--estrella-size);
