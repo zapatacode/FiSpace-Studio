@@ -1,3 +1,80 @@
+// ---- LOADER DE CARGA ----
+(function () {
+  const loader    = document.getElementById('page-loader');
+  const barFill   = document.getElementById('loaderBarFill');
+  const pctEl     = document.getElementById('loaderPct');
+  const MIN_TIME  = 1600; // ms mínimo que se muestra el loader
+  const startTime = Date.now();
+
+  document.body.classList.add('loading');
+
+  // Actualiza la barra y el porcentaje suavemente
+  function setProgress(pct) {
+    const clamped = Math.min(100, Math.max(0, pct));
+    barFill.style.width = clamped + '%';
+    pctEl.textContent   = Math.round(clamped) + '%';
+  }
+
+  // Oculta el loader con animación de salida
+  function hideLoader() {
+    setProgress(100);
+    // Pequeño delay para que se vea el 100% antes de salir
+    setTimeout(() => {
+      loader.classList.add('loader-exit');
+      loader.addEventListener('transitionend', () => {
+        loader.style.display = 'none';
+        document.body.classList.remove('loading');
+      }, { once: true });
+    }, 280);
+  }
+
+  // Recoge todas las imágenes de la página
+  function getAllImages() {
+    return Array.from(document.images);
+  }
+
+  // Rastrea el progreso de carga de imágenes
+  function trackImages() {
+    const imgs = getAllImages();
+    if (imgs.length === 0) return Promise.resolve();
+
+    let loaded = 0;
+    return new Promise((resolve) => {
+      function onLoad() {
+        loaded++;
+        setProgress((loaded / imgs.length) * 100);
+        if (loaded >= imgs.length) resolve();
+      }
+      imgs.forEach((img) => {
+        if (img.complete && img.naturalWidth > 0) {
+          onLoad();
+        } else {
+          img.addEventListener('load',  onLoad, { once: true });
+          img.addEventListener('error', onLoad, { once: true }); // contar errores también
+        }
+      });
+    });
+  }
+
+  // Animación de progreso "falso" para dar feedback inmediato
+  let fakeProgress = 0;
+  const fakeInterval = setInterval(() => {
+    // Avanza rápido al inicio y frena al acercarse a 85%
+    const step = fakeProgress < 40 ? 4 : fakeProgress < 70 ? 2 : 0.5;
+    fakeProgress = Math.min(85, fakeProgress + step);
+    setProgress(fakeProgress);
+  }, 80);
+
+  // Espera: imágenes cargadas + tiempo mínimo
+  Promise.all([
+    trackImages(),
+    new Promise(r => setTimeout(r, MIN_TIME))
+  ]).then(() => {
+    clearInterval(fakeInterval);
+    hideLoader();
+  });
+})();
+
 // ---- Header: se oculta al bajar, aparece al subir ----
 const header = document.querySelector('header');
 let lastScrollY = window.scrollY;
