@@ -538,59 +538,7 @@ text-fill-color: transparent;
   margin-left: 165px;
   transition: transform 0.3s ease;
 }
-/* wrapper para robot3 + mano + botón whatsapp */
-.btn-whatsapp-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
 
-/*robot3*/
-.robot3 {
-  position: absolute;
-  width: 92px;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 50px rgba(221, 68, 221, 0.4));
-  margin-top: -50px;
-  margin-left: -3px;
-  pointer-events: none;
-}
-.hand-layer-left3 {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  object-fit: contain;
-  pointer-events: none;
-  margin-top: 0px;
-  margin-left: -5px;
-  transition: transform 0.3s ease;
-}
-
-.btn-whatsapp {
-  position: relative;
-  z-index: 2;
-  background: linear-gradient(90deg, #FF00FF, #3D4CF5);
-  color: #FFFFFF;
-  padding: 8px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  white-space: nowrap;
-  letter-spacing: -0.04em;
-}
 /* Visual Direction Section */
 .visual-direction {
   padding: 80px 20px;
@@ -820,18 +768,29 @@ text-fill-color: transparent;
   z-index: 0;
 }
 
-/* Inner glass highlight on top edge */
+/* Inner white glass lines — top strip + bottom strip connected by 1px side edges */
 .pricing-card::after {
   content: "";
   position: absolute;
-  top: 1.5px;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
-  border-radius: 50%;
+  inset: 14px;
+  border-radius: 40px;
+  border: 1px solid rgba(255,255,255,0.55);
   pointer-events: none;
   z-index: 1;
+  clip-path: polygon(
+    0%   0%,
+    100% 0%,
+    100% 35%,
+    99%  35%,
+    99%  97%,
+    100% 97%,
+    100% 100%,
+    0%   100%,
+    0%   97%,
+    1%   97%,
+    1%   35%,
+    0%   35%
+  );
 }
 
 .pricing-card {
@@ -997,11 +956,11 @@ text-fill-color: transparent;
 .card-button::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 8%;
-  right: 8%;
+  top: 1px;
+  left: 12%;
+  right: 12%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
   pointer-events: none;
   z-index: 2;
 }
@@ -1277,13 +1236,67 @@ a.cta-box-wrapper {
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
+  margin-top: 25px;
   margin-bottom: 10px;
-  margin-top: 40px;
+}
+
+.btn-whatsapp {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(90deg, #FF00FF, #3D4CF5);
+  color: #FFFFFF;
+  padding: 5px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
 }
 
 .btn-whatsapp:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(221, 68, 221, 0.5);
+}
+
+/* wrapper para robot3 + mano + botón whatsapp */
+.btn-whatsapp-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/*robot3*/
+.robot3 {
+  position: absolute;
+  width: 90px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 50px rgba(221, 68, 221, 0.4));
+  margin-top: -46px;
+  margin-left: 2px;
+  pointer-events: none;
+}
+.hand-layer-left3 {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  object-fit: contain;
+  pointer-events: none;
+  margin-top:0px;
+  margin-left: 0px;
+  transition: transform 0.3s ease;
 }
 
 .btn-email {
@@ -2162,8 +2175,38 @@ footer p {
     padding: 7px 12px;
     margin-right: 6px;
   }
+  .contact-subtitle {
+    line-height: 16px;
+  }
+  .cta-subtitle {
+  color: rgba(163, 210, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.1;
+  max-width: 260px;
 }
-
+}
+@media (max-width: 334px) {
+.estrella-hero2{
+  --estrella-size: 17px; 
+  width: var(--estrella-size);
+  height: var(--estrella-size);
+  margin-top: -6px;
+  margin-left: -8px;
+}
+.contact-description {
+  line-height: 16px;
+}
+.contact-subtitle {
+    line-height: 16px;
+  }
+  .cta-subtitle {
+  font-size: 13px;
+  color: rgba(163, 210, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.1;
+  max-width: 130px;
+}
+}
 @media (max-width: 400px) {
   .logo {
     font-size: 10px;
@@ -2275,13 +2318,13 @@ footer p {
   color: rgba(163, 210, 255, 0.75);
   margin-bottom: 40px;
   line-height: 1.1;
-  max-width: 150px;
-  margin-top: 20px;
+  max-width: 180px;
+  margin-top: 10px;
 }
 .cta-title {
-    font-size: 20px;
+    font-size: 26px;
     margin-top: -20px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
   }
   .estrella-icon {
   --estrella-size: 25px; /* cambia este valor para ajustar el tamaño */
@@ -2321,11 +2364,74 @@ footer p {
   width: 14px;
   margin-left: 0;
 }
-.robot3{
+.robot3 {
   width: 65px;
   margin-top: -30px;
 }
 .contact-buttons {
   margin-top: 20px;
+}
+}
+@media (max-width: 383px) {
+  .cta-subtitle {
+  font-size: 13px;
+  color: rgba(163, 210, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.1;
+  max-width: 178px;
+}
+}
+@media (max-width: 369px) {
+  .cta-subtitle {
+  font-size: 13px;
+  color: rgba(163, 210, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.1;
+  max-width: 160px;
+}
+}
+@media (max-width: 353px) {
+.estrella-hero2{
+  --estrella-size: 17px; 
+  width: var(--estrella-size);
+  height: var(--estrella-size);
+  margin-top: -6px;
+  margin-left: -8px;
+}
+.contact-description {
+  line-height: 16px;
+}
+.contact-subtitle {
+    line-height: 16px;
+  }
+  .cta-subtitle {
+  font-size: 13px;
+  color: rgba(163, 210, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.1;
+  max-width: 159px;
+}
+}
+
+@media (max-width: 334px) {
+.estrella-hero2{
+  --estrella-size: 17px; 
+  width: var(--estrella-size);
+  height: var(--estrella-size);
+  margin-top: -6px;
+  margin-left: -8px;
+}
+.contact-description {
+  line-height: 16px;
+}
+.contact-subtitle {
+    line-height: 16px;
+  }
+  .cta-subtitle {
+  font-size: 13px;
+  color: rgba(163, 210, 255, 0.75);
+  margin-bottom: 40px;
+  line-height: 1.1;
+  max-width: 130px;
 }
 }
