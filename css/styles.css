@@ -1236,7 +1236,7 @@ a.cta-box-wrapper {
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 35px;
   margin-bottom: 10px;
 }
 
@@ -1284,6 +1284,7 @@ a.cta-box-wrapper {
   margin-top: -46px;
   margin-left: 2px;
   pointer-events: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 .hand-layer-left3 {
   position: absolute;
@@ -1297,6 +1298,15 @@ a.cta-box-wrapper {
   margin-top:0px;
   margin-left: 0px;
   transition: transform 0.3s ease;
+}
+
+.btn-whatsapp-wrap:hover .robot3 {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 24px 55px rgba(221, 68, 221, 0.65));
+}
+
+.btn-whatsapp-wrap:hover .hand-layer-left3 {
+  transform: translateY(-5px) rotate(-12deg);
 }
 
 .btn-email {
