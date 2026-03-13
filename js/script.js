@@ -282,3 +282,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
+// ---- Scroll Reveal: solo al bajar ----
+(function () {
+  // Guardamos la última posición de scroll para detectar dirección
+  let lastRevealScrollY = window.scrollY;
+
+  const revealEls = Array.from(document.querySelectorAll('.reveal'));
+
+  if (!revealEls.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Dirección actual: bajando = true, subiendo = false
+      const scrollingDown = window.scrollY >= lastRevealScrollY;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && scrollingDown) {
+          // El elemento entró al viewport mientras se baja → animar
+          entry.target.classList.add('visible');
+          // Una vez revelado, dejar de observarlo
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12,      // Se activa cuando el 12% del elemento es visible
+      rootMargin: '0px 0px -40px 0px', // Pequeño margen para que no dispare al borde
+    }
+  );
+
+  // Actualizar lastRevealScrollY en cada scroll
+  window.addEventListener('scroll', () => {
+    lastRevealScrollY = window.scrollY;
+  }, { passive: true });
+
+  revealEls.forEach((el) => observer.observe(el));
+})();
