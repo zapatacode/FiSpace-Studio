@@ -1,3 +1,6 @@
+/* =====================================================
+   LOADER DE CARGA — FiSpace Studio
+   ===================================================== */
 
 #page-loader {
   position: fixed;
@@ -2317,16 +2320,29 @@ footer p {
 }
 
 /* ---- Scroll Reveal Animations (desactivado) ---- */
+/* ---- SCROLL REVEAL ANIMATION ---- */
 .reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-scale {
+  transform: translateY(32px) scale(0.96);
+}
+
+.reveal.visible {
   opacity: 1;
-  transform: none;
+  transform: translateY(0) scale(1);
 }
 
 /* Delays escalonados para grupos de elementos */
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.35s; }
-.reveal-delay-4 { transition-delay: 0.5s; }
+.reveal-delay-1 { transition-delay: 0.10s; }
+.reveal-delay-2 { transition-delay: 0.22s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-4 { transition-delay: 0.52s; }
 
 /* LINEA DE ULTIMA SECCION */
 .linea {
